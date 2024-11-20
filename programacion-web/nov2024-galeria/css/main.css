@@ -102,3 +102,47 @@ body {
   opacity: 0;
 }
 
+
+.gallery__photoitem {
+  transition: transform 2s ease;
+}
+
+
+.gallery__photoitem.spotlight {
+  transform: scale(0.8);
+  position: relative;
+  z-index: 2;
+}
+
+
+
+.gallery__photoitem:has(+ .gallery__photoitem.spotlight) {
+  /* https://stackoverflow.com/a/15503444 */
+  /* Previeus sibling */
+
+  display: block;
+
+  position: absolute;
+  top: 1rem; bottom: 1rem;
+  left: 1rem; right: 1rem;
+
+  transform: translateX(-19.5vw) perspective(30vw) rotateY(45deg) translateX(1vw) scale(0.45);
+  z-index: 0;
+  
+}
+
+
+.gallery__photoitem.spotlight + .gallery__photoitem {
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/Next-sibling_combinator */
+  /* Next sibling */
+  
+  display: block;
+
+  position: absolute;
+  top: 1rem; bottom: 1rem;
+  left: 1rem; right: 1rem;
+
+  transform: translateX(19.5vw) perspective(30vw) rotateY(-45deg) translateX(-1vw) scale(0.45);
+
+  z-index: 0;
+}
