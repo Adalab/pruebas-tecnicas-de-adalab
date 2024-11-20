@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #014545;
+}
+
+.header {
+  color: white;
+  font-size: 2rem;
+  padding: 1rem 2rem;
+}
+
+.header .header__title {
+  font-family: "Molle", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.gallery {
+  width: 80%;
+  margin-block: 2rem;
+  margin-inline: auto;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #000000BB;
+}
+
+.gallery .gallery__list {
+  list-style-type: none;
+}
+
+.gallery .gallery__list img {
+  width: 100%;
+}
