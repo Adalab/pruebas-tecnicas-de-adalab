@@ -27,6 +27,8 @@ body {
   padding: 1rem;
   border-radius: 10px;
   background-color: #000000BB;
+
+  position: relative;
 }
 
 .gallery .gallery__list {
@@ -36,3 +38,67 @@ body {
 .gallery .gallery__list img {
   width: 100%;
 }
+
+.gallery .gallery__photoitem {
+  display: none;
+}
+
+.gallery .gallery__photoitem.spotlight {
+  display: block;
+}
+
+.gallery .gallery__controls {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 3;
+}
+
+.gallery .gallery__controls .btn {
+  width: 2rem;
+  height: 2rem;
+
+  background-color: #099d8d;
+  color: #5cf6e5;
+
+  border: solid 3px #0ddec7;
+  border-radius: .75rem;
+
+  font-size: 1rem;
+  font-weight: bold;
+  opacity: 0.6;
+  box-shadow: 0px 0px 8px 2px black;
+
+  cursor: pointer;
+}
+
+.gallery .gallery__controls .btn:hover {
+  background-color: #c93825;
+  color: #ea978c;
+  border-color: #dd5947;
+}
+
+@media (width > 768px) {
+  .gallery .gallery__controls .btn {
+    font-size: 1.5rem;
+    border-radius: 1.2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    box-shadow: 0px 0px 15px 3px black;
+  }
+  }
+
+.gallery .gallery__controls .btn {
+  transition: background-color .2s ease, color .3s ease, border-color .3s ease, opacity .5s ease;
+}
+.gallery .gallery__controls .btn:disabled {
+  opacity: 0;
+}
+
