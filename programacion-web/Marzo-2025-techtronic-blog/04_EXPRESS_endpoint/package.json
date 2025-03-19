@@ -1,0 +1,32 @@
+{
+  "name": "techtronic-blog-server",
+  "version": "0.0.1",
+  "description": "Blog server to implement a proxy for weather API",
+  "keywords": [
+    "express"
+  ],
+  "license": "CC-BY-SA-4.0",
+  "author": "IGarrido for Adalab",
+  "type": "commonjs",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "jest --verbose --runInBand --watchAll"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}

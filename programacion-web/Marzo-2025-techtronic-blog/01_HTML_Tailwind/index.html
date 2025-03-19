@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>TechTronic blog</title>
+    <link rel="stylesheet" href="./styles/main.css" />
+  </head>
+
+  <body>
+    <header
+      class="relative flex justify-between items-center p-4 border-b md:gap-8 xl:mx-40 2xl:mx-80"
+    >
+      <a
+        class="px-2 py-1 bg-secondary text-background-secondary rounded-md text-sm font-medium md:order-1"
+        href="#"
+      >
+        Tienda
+      </a>
+      <h1
+        class="absolute left-1/2 -translate-x-1/2 md:relative md:left-0 md:translate-x-0 md:flex-1"
+      >
+        <img
+          class="inline mr-2"
+          width="24"
+          height="24"
+          src="./images/corp/logo.svg"
+          alt="Logo de TechTronic que es como un símbolo de un relámpago con el centro hueco"
+        />
+        Blog de TechTronic
+      </h1>
+      <nav class="relative md:min-w-90 md:flex-1">
+        <label for="menu_mobile">
+          <img
+            class="md:hidden"
+            width="24"
+            height="24"
+            src="./images/icons/hamburger.svg"
+            alt="Icono del menú hamburguesa"
+          />
+          <input class="hidden" type="checkbox" id="menu_mobile" />
+        </label>
+        <ul
+          class="menu hidden fixed left-0 w-screen justify-evenly gap-1 py-2 bg-white md:relative md:flex md:w-full md:py-0"
+        >
+          <li>
+            <a href="#">Inicio</a>
+          </li>
+          <li>
+            <a href="#">Blog</a>
+          </li>
+          <li>
+            <a href="#">Productos</a>
+          </li>
+          <li>
+            <a href="#">Sobre nosotros</a>
+          </li>
+          <li>
+            <a href="#">Contacto</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main
+      class="mx-8 py-8 md:py-12 xl:mx-40 2xl:mx-80 md:grid md:grid-cols-[1fr_368px]"
+    >
+      <section class="space-y-4">
+        <h2 class="text-3xl font-bold tracking-tight">Últimos artículos</h2>
+        <p>
+          Mantente actualizado con las últimas noticias y novedades del mundo de
+          la electrónica
+        </p>
+        <ol>
+          <li class="flex flex-col space-y-6">
+            <article class="p-6 rounded-lg border">
+              <strong
+                class="px-2 py-0.5 mr-4 bg-secondary text-background-secondary rounded-full text-xs font-semibold"
+                >Destacado</strong
+              >
+              <div class="inline-flex items-center gap-1 text-sm">
+                <img
+                  class="inline h-3 w-3"
+                  width="24"
+                  height="24"
+                  src="./images/icons/date.svg"
+                  alt="Icono de un calendario para indicar la fecha"
+                />
+                <time datetime="2025-02-04">Feb 4, 2025</time>
+              </div>
+              <h3 class="mt-4 text-2xl font-bold">
+                El futuro de la tecnología wearable en 2025
+              </h3>
+              <p class="mt-2 p-4 rounded-md font-medium">
+                La tecnología vestible evoluciona a un ritmo sin precedentes,
+                con la aparición de nuevas innovaciones que prometen
+                revolucionar la forma en que interactuamos con nuestros
+                dispositivos y controlamos nuestra salud.
+              </p>
+              <a
+                class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-secondary"
+                href="#"
+              >
+                Leer más
+                <img
+                  class="inline h-3 w-3"
+                  width="24"
+                  height="24"
+                  src="./images/icons/go.svg"
+                  alt="Icono de ir al artículo"
+                />
+              </a>
+            </article>
+
+            <article class="p-6 rounded-lg border">
+              <strong
+                class="px-2 py-0.5 mr-4 bg-background-secondary text-secondary rounded-full text-xs font-bold"
+                >Smartphones</strong
+              >
+              <div
+                class="inline-flex items-center gap-1 text-sm text-secondary"
+              >
+                <img
+                  class="inline h-3 w-3"
+                  width="24"
+                  height="24"
+                  src="./images/icons/date.svg"
+                  alt="Icono de un calendario para indicar la fecha"
+                />
+                <time datetime="2024-06-02">Jun 2, 2024</time>
+              </div>
+              <h3 class="mt-4 text-2xl font-bold">
+                Los 5 mejores smartphones de 2024: Un análisis exhaustivo
+              </h3>
+              <p class="mt-2 p-4 rounded-md font-medium">
+                Hemos probado los últimos smartphones insignia para ayudarte a
+                hacer una decisión informada sobre tu próxima compra.
+              </p>
+              <a
+                class="inline-flex items-center gap-1 mt-4 text-sm font-medium text-secondary"
+                href="#"
+              >
+                Leer más
+                <img
+                  class="inline h-3 w-3"
+                  width="24"
+                  height="24"
+                  src="./images/icons/go.svg"
+                  alt="Icono de ir al artículo"
+                />
+              </a>
+            </article>
+          </li>
+        </ol>
+        <div class="flex justify-center">
+          <button
+            class="h-10 px-4 py-2 border border-input bg-background-secondary text-secondary rounded-md text-sm font-medium whitespace-nowrap cursor-pointer"
+          >
+            Más artículos
+            <img
+              class="inline ml-2 w-4 h-4"
+              width="24"
+              height="24"
+              src="./images/icons/go.svg"
+              alt="Icono de ir a más artículos"
+            />
+          </button>
+        </div>
+      </section>
+      <aside>
+        <div class="px-6 pt-6">
+          <h3 class="text-2xl font-semibold">Búsqueda</h3>
+        </div>
+        <div class="px-6 pt-6 flex gap-4">
+          <input
+            class="h-10 px-3 py-2 w-full rounded-md border border-input bg-background text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            placeholder="Busca por título..."
+          />
+          <button
+            class="h-10 w-10 flex justify-center items-center rounded-xl bg-background-secondary text-secondary hover:bg-background-secondary/80 cursor-pointer"
+          >
+            <img
+              class="w-6 h-6"
+              src="./images/icons/search.svg"
+              width="24"
+              height="24"
+              alt="Icono de una lupa para buscar"
+            />
+          </button>
+        </div>
+
+        <div class="px-6 pt-6">
+          <!-- Widget Meteo -->
+          <div
+            class="p-6 rounded-xl border-0 bg-secondary text-background-secondary shadow-xl md:aspect-video md:overflow-hidden hover:aspect-auto"
+          >
+            <h2 class="text-2xl font-light">Sevilla</h2>
+            <p class="flex justify-between items-baseline text-sm opacity-70">
+              <span>miércoles, 19 de marzo</span>
+              <span>7:00 PM</span>
+            </p>
+            <section class="flex justify-between mt-4 mb-8">
+              <div class="flex items-start gap-2 pr-8">
+                <picture
+                  class="w-auto aspect-square inline-block p-3 rounded-full bg-highlight/20"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 stroke-current" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-sun text-white"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                </picture>
+                <div class="flex flex-col">
+                  <h3 class="text-sm opacity-70">Soleado</h3>
+                  <strong class="text-4xl font-light">24º</strong>
+                </div>
+              </div>
+              <section class="border-l border-l-background/10 pl-8 text-end">
+                <h4 class="text-sm opacity-70">Sensación</h4>
+                <strong class="text-lg font-light">23º</strong>
+              </section>
+            </section>
+            <section class="mt-8 mb-4">
+              <h3 class="text-xs opacity-70 uppercase">Previsión</h3>
+              <ol class="mt-4 grid grid-cols-2 gap-4">
+                <li
+                  class="px-2 py-4 rounded-xl bg-highlight/20 flex justify-between items-center"
+                >
+                  <div>
+                    <h4 class="text-white text-sm font-medium leading-none">
+                      8:00 PM
+                    </h4>
+                    <span class="text-xs leading-none opacity-70">Soleado</span>
+                  </div>
+                  <span class="text-lg font-medium">24º</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-current" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-sun text-white"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                </li>
+                <li
+                  class="px-2 py-4 rounded-xl bg-white/5 flex justify-between items-center"
+                >
+                  <div>
+                    <h4 class="text-white text-sm font-medium leading-none">
+                      9:00 PM
+                    </h4>
+                    <span class="text-xs leading-none opacity-70">Nuboso</span>
+                  </div>
+                  <span class="text-lg font-medium">21º</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 stroke-current" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-cloud text-white"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"></path></svg>
+                </li>
+              </ol>
+            </section>
+          </div>
+        </div>
+        <!-- END-Widget Meteo -->
+
+        <!-- Widget categories -->
+        <div class="px-6 pt-6">
+          <section class="p-6 rounded-xl border">
+            <h3 class="text-2xl font-semibold">Categorías</h3>
+
+            <ul class="pt-6 mx-2 grid gap-4">
+              <li>
+                <a
+                  href="#"
+                  class="grid grid-cols-[2rem_1fr_2.5rem] items-center"
+                >
+                  <img
+                    src="./images/icons/smartphone.svg"
+                    class="w-4 h-4 stroke-current"
+                    width="16"
+                    height="16"
+                    alt="Icono de un smartphone"
+                  />
+                  <span>Smartphones</span>
+                  <span
+                    class="block py-1 pr-3 bg-background-secondary text-secondary rounded-full text-xs font-bold text-right"
+                    >24</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="grid grid-cols-[2rem_1fr_2.5rem] items-center"
+                >
+                  <img
+                    src="./images/icons/laptop.svg"
+                    class="w-4 h-4 stroke-current"
+                    width="16"
+                    height="16"
+                    alt="Icono de un portátil"
+                  />
+                  <span>Portátiles &amp; ordenadores</span>
+                  <span
+                    class="block py-1 pr-3 bg-background-secondary text-secondary rounded-full text-xs font-bold text-right"
+                    >18</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="grid grid-cols-[2rem_1fr_2.5rem] items-center"
+                >
+                  <img
+                    src="./images/icons/smarthome.svg"
+                    class="w-4 h-4 stroke-current"
+                    width="16"
+                    height="16"
+                    alt="Icono de un smartphone"
+                  />
+                  <span>Smarthome</span>
+                  <span
+                    class="block py-1 pr-3 bg-background-secondary text-secondary rounded-full text-xs font-bold text-right"
+                    >12</span
+                  >
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="grid grid-cols-[2rem_1fr_2.5rem] items-center"
+                >
+                  <img
+                    src="./images/icons/wearable.svg"
+                    class="w-4 h-4 stroke-current"
+                    width="16"
+                    height="16"
+                    alt="Icono de una flecha apuntando a un sol"
+                  />
+                  <span>Wearables</span>
+                  <span
+                    class="block py-1 pr-3 bg-background-secondary text-secondary rounded-full text-xs font-bold text-right"
+                    >9</span
+                  >
+                </a>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </aside>
+    </main>
+    <footer
+      class="flex justify-center items-center p-4 border-t md:gap-8 xl:mx-40 2xl:mx-80"
+    >
+      <p class="mx-8 text-center text-sm text-muted-foreground">
+        &copy; 2025 TechTronic. All rights reserved.
+      </p>
+    </footer>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-background: #f9f9f9;
+        --color-primary: #111111;
+        --color-background-secondary: #dddddd;
+        --color-secondary: #1a1a2e;
+        --color-highlight: #4d4dff;
+      }
+    </style>
+  </body>
+</html>

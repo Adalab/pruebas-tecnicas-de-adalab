@@ -1,0 +1,15 @@
+body {
+  display: grid;
+  height: 100dvh;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header:has(#menu_mobile:checked) {
+  margin-bottom: 1.5em;
+  transition: .15s margin-bottom ease-in-out;
+
+  .menu {
+    display: flex;
+  }
+}
