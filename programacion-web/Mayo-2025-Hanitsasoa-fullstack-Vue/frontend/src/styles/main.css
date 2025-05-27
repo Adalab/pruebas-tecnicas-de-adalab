@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-text-primary: #333333;
+  --color-text-secondary: #0da394;
+  --color-text-input: #000000;
+  --color-text-error: #c93825;
+  --color-background-primary: #0da394;
+  --color-background-secondary: #b8b8b9;
+  --color-background-input: #ffffff;
+
+  color: var(--color-text-primary);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-size: 1.5rem;
+  height: fit-content;
+  overflow-y: auto;
+}

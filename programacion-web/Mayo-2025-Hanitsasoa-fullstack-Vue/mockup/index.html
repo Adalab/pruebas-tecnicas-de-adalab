@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de contacto</title>
+
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <header class="header">
+
+  </header>
+  <main class="main">
+    <form class="form">
+      <div class="form__line">
+        <label class="form__label" for="fullname">Nombre</label>
+        <input class="form__input" type="text" name="fullname" id="fullname" placeholder="Ej: Paquita Salas">
+        <p class="form__error">Debes rellenar el nombre</p>
+      </div>
+      <div class="form__line">
+        <label class="form__label" for="fullname">Email</label>
+        <input class="form__input" type="email" name="email" id="email" placeholder="Ej: email@direccion.com">
+        <p class="form__error"></p>
+      </div>
+      <div class="form__line">
+        <label class="form__label" for="fullname">Teléfono</label>
+        <input class="form__input" type="tel" name="phone" id="phone" placeholder="Ej: +34 555 123 456">
+        <p class="form__error"></p>
+      </div>
+      <div class="form__line">
+        <label class="form__label" for="fullname">Mensaje</label>
+        <textarea class="form__input" name="message" id="message" placeholder="Ej: Motivo del contacto"></textarea>
+        <p class="form__error"></p>
+      </div>
+      <div class="form__buttons">
+        <button class="form__btn" type="submit">Enviar</button>
+      </div>
+    </form>
+  </main>
+  
+</body>
+</html>

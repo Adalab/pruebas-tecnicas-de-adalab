@@ -1,0 +1,26 @@
+{
+  "editor.fontSize": 14,
+  "editor.matchBrackets": "never",
+  "editor.minimap.enabled": false,
+  "editor.scrollbar.verticalScrollbarSize": 0,
+  "editor.hover.enabled": false,
+  "window.zoomLevel": 1.5,
+  "editor.lineHeight": 1.5,
+  "workbench.statusBar.visible": true,
+  "workbench.colorTheme": "Default Dark+",
+  "editor.inlayHints.enabled": "off",
+  "presentation-mode.configBackup": {
+    "editor.fontSize": "undefined",
+    "editor.matchBrackets": "undefined",
+    "editor.minimap.enabled": "undefined",
+    "editor.scrollbar.verticalScrollbarSize": "undefined",
+    "editor.hover.enabled": "undefined",
+    "window.zoomLevel": "undefined",
+    "editor.lineHeight": "undefined",
+    "workbench.activityBar.visible": "undefined",
+    "workbench.statusBar.visible": "undefined",
+    "workbench.primaryBar.visible": "undefined",
+    "workbench.colorTheme": "undefined",
+    "editor.inlayHints.enabled": "undefined"
+  }
+}
