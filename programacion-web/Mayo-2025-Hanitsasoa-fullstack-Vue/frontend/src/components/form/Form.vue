@@ -1,67 +1,98 @@
 <script setup>
-import { ref } from 'vue';
+import { ref } from 'vue'
 import axios from 'axios';
 
-import Input from './FormInput.vue';
-import TextArea from './FormText.vue';
-import FormButtons from './FormButtons.vue';
+import { validateField, isNotEmpty, isNotFullname, isNotEmail, isNotPhone } from '../../lib/validator.js'
+import Input from './FormInput.vue'
+import TextArea from './FormText.vue'
+import FormButtons from './FormButtons.vue'
 
-// Creo la variable data para almacenar los valores de los input del form
-const data = ref({
+const SERVER_URL = import.meta.env.PROD ? '/api/form' : 'http://localhost:4000/api/form';
+
+const INITIAL_DATA = {
   fullname: "",
   email: "",
   phone: "",
   message: ""
-});
+}
 
-const errors = ref({
-  fullname: "",
-  email: "",
-  phone: "",
-  message: ""
-});
+const data = ref({ ...INITIAL_DATA });
+const errors = ref({ ...INITIAL_DATA });
+const dataPost = ref(null);
 
+function validateAllFields() {
+  errors.value.fullname = validateField(data.value.fullname, 'del nombre completo', [isNotEmpty, isNotFullname]);
+  errors.value.email = validateField(data.value.email, 'email', [isNotEmpty, isNotEmail]);
+  errors.value.phone = validateField(data.value.phone, 'teléfono', [isNotEmpty, isNotPhone]);
+  errors.value.message = validateField(data.value.message, 'mensaje', [isNotEmpty]);
+
+  if (Object.values(errors.value).some(value => value)) {
+    // There's some fields don't pass the checks.
+    return false;
+  }
+
+  return true;
+}
 
 function handleSubmit(ev) {
   ev.preventDefault();
 
-  if( data.value.fullname === '' ) {
-    errors.value.fullname = 'El nombre completo está vacio';
-    return;
+  if (validateAllFields()) {
+    console.log('Submitting...');
+    console.log(Object.values(data.value));
+
+    dataPost.value = 'sending';
+
+    const endSpinnerTime = (new Date()).getTime() + 500;
+
+    axios.post(SERVER_URL, data.value)
+      .then(function (response) {
+        console.log(response);
+
+        const now = (new Date()).getTime();
+
+        setTimeout(() => {
+          dataPost.value = 'sent';
+          setTimeout(() => {
+            dataPost.value = null;
+            data.value = { ...INITIAL_DATA };
+          }, 1500);
+        }, Math.max(endSpinnerTime - now, 0));
+      })
+      .catch(function (error) {
+        console.log(error);
+
+        const now = (new Date()).getTime();
+
+        setTimeout(() => {
+          dataPost.value = error.response.data.error;
+        }, Math.max(endSpinnerTime - now, 0));
+      });
   }
-  
-  /*
-    Usamos la biblioteca axios para lanzar la pet post.
-  */
-  axios.post(
-    'http://localhost:4000/api/form',
-    data.value
-  )
-  .then(res => {
-    console.log(res);
-  })
-  .catch(function (error) {
-    console.log(error.response.data);
-  });
 }
+
 </script>
 
 <template>
-  <form class="form" @submit="handleSubmit" >
-    <Input name="fullname" label="Nombre" placeholder="Ej: Paquita Salas" v-model="data.fullname" :error="errors.fullname" />
+  <form class="form" @submit="handleSubmit">
+    <Input name="fullname" label="Nombre" placeholder="Ej: Paquita Salas" v-model="data.fullname"
+      :error="errors.fullname" />
 
-    <Input name="email" label="Email" type="email" placeholder="Ej: email@direccion.com" v-model="data.email" :error="errors.email" />
-    <Input name="phone" label="Teléfono" type="tel" placeholder="Ej: +34 555 123 456" v-model="data.phone" :error="errors.phone" />
-    <TextArea name="message" label="Mensaje" placeholder="Ej: Motivo del contacto" v-model="data.message" :error="errors.message" />
+    <Input name="email" label="Email" type="email" placeholder="Ej: email@direccion.com" v-model="data.email"
+      :error="errors.email" />
+    <Input name="phone" label="Teléfono" type="tel" placeholder="Ej: +34 555 123 456" v-model="data.phone"
+      :error="errors.phone" />
+    <TextArea name="message" label="Mensaje" placeholder="Ej: Motivo del contacto" v-model="data.message"
+      :error="errors.message" />
 
-    <FormButtons />
+    <FormButtons :dataPost="dataPost" />
   </form>
 </template>
 
 <style>
 .form {
-  translate: 0 30dvh;
-  min-height: 70dvh;
+  translate: 0 25dvh;
+  min-height: 75dvh;
   max-width: 768px;
   margin-inline: auto;
 
@@ -75,8 +106,8 @@ function handleSubmit(ev) {
 
 @media (height > 768px) {
   .form {
-    translate: 0 40dvh;
-    min-height: 60dvh;
+    translate: 0 35dvh;
+    min-height: 65dvh;
   }
 }
 
@@ -143,9 +174,6 @@ function handleSubmit(ev) {
   font-size: 1.25rem;
 }
 
-textarea.form__input {
-  height: calc(2lh + 1em);
-}
 
 .form__error {
   margin-block: 0.5em;
@@ -175,5 +203,6 @@ textarea.form__input {
   border-radius: .5em;
   font-size: 1.25rem;
   font-weight: 600;
+  cursor: pointer;
 }
 </style>

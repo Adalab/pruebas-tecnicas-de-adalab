@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
-const { validateField, isNotEmpty, isNotFullname, isNotEmail, isNotPhone } = require('./lib/validator');
+const { v7: uuidv7 } = require("uuid");
+const { validateField, isNotEmpty, isNotFullname, isNotEmail, isNotPhone } = require('./lib/validator')
 
 // Configurar Express
 const server = express();
@@ -26,9 +27,10 @@ const MANDATORY_FIELDS_VALIDATIONS = {
   'phone': [isNotEmpty, isNotPhone],
   'message': [isNotEmpty]
 };
+
 const MANDATORY_FIELDS = Object.keys(MANDATORY_FIELDS_VALIDATIONS);
 
-
+const formResponses = [];
 
 server.post("/api/form", (req, res) => {
   if( !req.body || typeof req.body !== 'object' ) {
@@ -52,5 +54,23 @@ server.post("/api/form", (req, res) => {
     return res.status(400).json({success: false, error: "Mandatory fields have no value", description: errors.join('. ')})
   }
 
-  res.json({success:true});
-});
+  const dataObject = {
+    id: uuidv7(),
+    createdAt: (new Date()).toISOString(),
+    fullname: req.body.fullname.trim(),
+    email: req.body.email.trim(),
+    phone: req.body.phone.trim(),
+    message: req.body.message.trim(),
+  };
+
+  const existentResponse = formResponses.find(r => r.email === dataObject.email || r.phone === dataObject.phone);
+
+  if( existentResponse ) {
+    const errorDescription = `Response with the same ${existentResponse.email === dataObject.email ? 'email' : 'phone'} found in the server`;
+    return res.status(409).json({success: false, error: 'Response already exists', description: errorDescription})
+  }
+
+  formResponses.push(dataObject);
+
+  res.json({success: true, data: dataObject, count: formResponses.length })
+})

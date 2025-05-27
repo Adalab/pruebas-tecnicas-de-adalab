@@ -1,10 +1,10 @@
 <script setup>
-import Form from './form/Form.vue';
-
+import Form from './form/Form.vue'
 </script>
 
 <template>
   <header class="header">
+
   </header>
   <main class="main">
     <Form />
