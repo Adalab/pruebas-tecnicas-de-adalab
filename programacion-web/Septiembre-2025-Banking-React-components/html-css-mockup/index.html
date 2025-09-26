@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banking App</title>
+  <link rel="stylesheet" href="assets/main.css" />
+</head>
+
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__brand">
+          <!-- <img src="assets/icons/landmark.svg" alt="Landmark" class="header__icon" /> -->
+          <svg class="header__icon">
+            <use href="assets/icons/landmark.svg" width="100%" height="100%"></use>
+          </svg>
+          <h1 class="header__title">Banking</h1>
+        </div>
+      </div>
+    </header>
+    <main class="main">
+      <ul class="main__grid">
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--disabled" disabled="">
+                <svg class="button__icon" alt="House icon">
+                  <use href="assets/icons/house.svg" width="100%" height="100%"></use>
+                </svg>Inicio
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--muted">Panel Principal</div>
+            <div class="content__description">
+              Accede a tu panel principal donde podrás ver un resumen completo
+              de todas tus cuentas bancarias, movimientos recientes y estado
+              financiero general.
+            </div>
+            <div class="content__description content__description--margin-top">
+              Esta sección te proporciona una vista panorámica de tu situación
+              financiera actual con gráficos interactivos y métricas clave
+              para una mejor gestión de tus finanzas.
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--blue">
+                <svg class="button__icon" alt="Bell icon">
+                  <use href="assets/icons/bell.svg" width="100%" height="100%"></use>
+                </svg>Ver notificaciones
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--blue">Centro de Alertas</div>
+            <div class="alert-list">
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--blue"></div>
+                <span>Nuevas transferencias recibidas</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--green"></div>
+                <span>Actualizaciones de seguridad</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--orange"></div>
+                <span>Recordatorios de pagos</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--purple"></div>
+                <span>Ofertas personalizadas</span>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--green">
+                Buscar contenido
+                <svg class="button__icon" alt="Search icon">
+                  <use href="assets/icons/search.svg" width="100%" height="100%"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--green">
+              Búsqueda Avanzada
+            </div>
+            <div class="content__description">
+              Utiliza nuestro potente motor de búsqueda para encontrar
+              cualquier transacción, documento o información específica en tu
+              historial bancario de forma rápida y eficiente.
+            </div>
+            <div class="content__description content__description--margin-top">
+              Incluye filtros avanzados por fecha, cantidad, tipo de operación
+              y categoría para resultados más precisos y personalizados según
+              tus necesidades.
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--purple">
+                <svg class="button__icon" alt="Heart icon">
+                  <use href="assets/icons/heart.svg" width="100%" height="100%"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--purple">Accesos Rápidos</div>
+            <div class="alert-list">
+              <div class="alert-list__item">
+                <svg class="icon icon--purple" alt="Heart icon">
+                  <use href="assets/icons/heart.svg" width="100%" height="100%"></use>
+                </svg><span>Transferencias frecuentes</span>
+              </div>
+              <div class="alert-list__item">
+                <svg class="icon icon--purple" alt="Heart icon">
+                  <use href="assets/icons/heart.svg" width="100%" height="100%"></use>
+                </svg><span>Beneficiarios habituales</span>
+              </div>
+              <div class="alert-list__item">
+                <svg class="icon icon--purple" alt="Heart icon">
+                  <use href="assets/icons/heart.svg" width="100%" height="100%"></use>
+                </svg><span>Productos favoritos</span>
+              </div>
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--orange">
+                Ajustes avanzados<svg class="button__icon" alt="Settings icon">
+                  <use href="assets/icons/settings.svg" width="100%" height="100%"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--orange">
+              Configuración del Sistema
+            </div>
+            <div class="content__description">
+              Personaliza tu experiencia bancaria con opciones avanzadas de
+              configuración. Ajusta preferencias de notificaciones, límites de
+              transacciones y configuraciones de seguridad.
+            </div>
+            <div class="content__description content__description--margin-top">
+              Incluye gestión de dispositivos autorizados, configuración de
+              autenticación de dos factores y personalización de la interfaz
+              según tus preferencias de uso.
+            </div>
+          </article>
+        </li>
+        <li class="card">
+          <div class="card__header">
+            <div class="card__header-content">
+              <button class="button button--red">
+                <svg class="button__icon" alt="Headphones icon">
+                  <use href="assets/icons/headphones.svg" width="100%" height="100%"></use>
+                </svg>
+                Contactar con soporte
+              </button>
+            </div>
+          </div>
+          <article class="card__content">
+            <div class="content__title content__title--red">Asistencia 24/7</div>
+            <div class="alert-list">
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--green"></div>
+                <span>Chat en vivo disponible</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--blue"></div>
+                <span>Soporte telefónico 24/7</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--orange"></div>
+                <span>Centro de ayuda online</span>
+              </div>
+              <div class="alert-list__item">
+                <div class="alert-list__indicator alert-list__indicator--purple"></div>
+                <span>Tickets de soporte técnico</span>
+              </div>
+            </div>
+          </article>
+        </li>
+      </ul>
+    </main>
+  </div>
+</body>
+
+</html>

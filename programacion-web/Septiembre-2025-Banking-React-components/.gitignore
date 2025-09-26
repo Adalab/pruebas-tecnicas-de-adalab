@@ -1,0 +1,6 @@
+node_modules
+.vite
+.vscode
+dist
+.env
+.DS_Store
